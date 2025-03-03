@@ -1,53 +1,35 @@
 .container {
     background-color: #9fd9dd;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+/*    flex-direction: row;
     flex-wrap: wrap; 
     justify-content:center; 
-    gap: 20px;
+    gap: 20px; */
     padding: 1%;
-
+    @media (max-width: 1060px) {
+        grid-template-columns: repeat(2, 1fr);
+        /*padding: 2%;
+        gap: 30px;  */      
+    }
 }
 .rounded:hover {
-    flex: 1 1 calc(30% - 50px); /* Минимальная ширина 30%, адаптация при сужении */
-    max-width: 200px;
-    text-align: center;
-    padding: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #26d4e0;
-    border-style:outset;
-    border-radius: 20px;
-    user-select: none;
-    word-wrap: break-word; /* Позволяет переносить слова */
-    overflow-wrap: break-word; /* Альтернативный вариант переноса */
-    @media (max-width: 1060px) {
-        max-width: 300px;
-        min-width: 285px;        
-    }    
+    border-style:outset;  
 }
 .rounded:active{
-    flex: 1 1 calc(30% - 50px); /* Минимальная ширина 30%, адаптация при сужении */
-    max-width: 200px;
-    text-align: center;
-    padding: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #26d4e0;
-    border-style: groove;
-    border-radius: 20px;
-    user-select: none;
-    word-wrap: break-word; /* Позволяет переносить слова */
-    overflow-wrap: break-word; /* Альтернативный вариант переноса */
-    @media (max-width: 1060px) {
-        max-width: 300px;
-        min-width: 285px;        
-    }    
+    border-style: groove;  
 }
 .rounded{
     flex: 1 1 calc(30% - 50px); /* Минимальная ширина 30%, адаптация при сужении */
     max-width: 200px;
+    min-width: 200px;
     text-align: center;
     padding: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     background-color: #9fd9dd;
     border-style:outset;
     border-radius: 20px;
@@ -86,6 +68,7 @@
     flex-direction: column;
     word-wrap: unset;
     position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     top: 5%; /* Расположение текста */
     left: 5%;
     right: 850px;
@@ -109,7 +92,7 @@
         font-size: 56px;
     }
     @media (max-width: 768px) {
-        font-size: 56px;
+        font-size: 48px;
         width: 700px;
         top: 1%;
         left: 15%;
@@ -120,12 +103,13 @@
     flex-direction: column;
     word-wrap: unset;
     position: absolute;
-    top: 30%; /* Расположение текста */
+    top: 32%; /* Расположение текста */
     left: 5%;
     right: 850px;
     text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white; /* Белый цвет текста для контраста */
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     max-width: 70%; /* Ограничение ширины текста */
     @media (max-width: 1507px) {
@@ -155,6 +139,8 @@
     flex-direction: column;
     word-wrap: unset;
     position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
     top: 50%; /* Расположение текста */
     left: 5%;
     right: 850px;
@@ -175,10 +161,10 @@
     }
     @media (max-width: 890px) {
         width: 280px;
-        font-size: 24px;
+        font-size: 20px;
     }
     @media (max-width: 768px) {
-        font-size: 24px;
+        font-size: 20px;
         top: 20%;
         width: 700px;
         left: 15%;
@@ -259,6 +245,12 @@
     user-select: none;
     max-width: 625px; /* Ограничение по ширине */
     opacity: 0.9; /* Прозрачность, если нужно */
+    @media (max-width: 1600px) {
+        object-fit: cover;
+        width: 488px;
+        height: 700px;
+        overflow: hidden;
+    }
     @media (max-width: 1154px) {
         object-fit: cover;
         width: 400px;
@@ -275,9 +267,10 @@
 }
 
 .meduslugi-text{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     padding: 3%;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: bold;
     color:#a8cecc;
 }
@@ -329,6 +322,7 @@
     }
 }
 .meduslugi-uslugi-text{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     padding-top: 0%;
     padding-bottom: 10%;
     color:  #a8cecc;
@@ -545,16 +539,18 @@
 
 
 .container4main{
-    position: relative;
     margin-top: 3%;
     padding-top: 3%;
     background-color: #c0dddb;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    z-index: 1;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: flex-start;
     gap: 10px;
     min-height: 700px;
+    @media (max-width: 768px){
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 .container4left{
     flex: 1 1 calc(30% - 50px);
@@ -570,7 +566,8 @@
     padding-left: 10%;
     padding-right: 3%;
     @media (max-width: 768px){
-        min-height: 500px;
+        width: 550px;
+        min-height: 350px;
     }
 }
 .text41{
@@ -604,12 +601,14 @@
 }
 .imgmessage{
     position: absolute;
-    bottom: 50%;
+    bottom: 55%;
     right: 5%;
     width: 250px;
     height: 250px;
     @media (max-width: 991px) {
-        top: 10%;
+        width: 200px;
+        height: 200px;
+        top: 0%;
     }
     @media (max-width: 768px){
         top: 0%;
@@ -618,7 +617,7 @@
 .text43{
     text-align: left;
     position: absolute;
-    bottom: 10%;
+    bottom: 18%;
     left: 10%;
     right: 5%;
     flex: 1 1 calc(30% - 50px);
@@ -635,46 +634,38 @@
     }
 }
 
-.container5main{
-    display: flex;
-    flex-wrap: row;
-    position: absolute;
-    width: 100%;
-    top: 95%;
-    flex-direction: row;
-    justify-content: space-between;
+.container5main {
+    display: grid;
+    margin-top: -8%;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки на больших экранах */
     gap: 30px;
+    width: 100%;
+    z-index: 2;
     @media (max-width: 991px) {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr); /* Адаптация для меньших экранов */
     }
-    @media (max-width: 819px) {
-        justify-content: center;
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr); /* Адаптация для меньших экранов */
     }
 }
 
-.container5-elements{
-    flex: 1 1 calc(30% - 50px); /* Минимальная ширина 30%, адаптация при сужении */
+.container5-elements {
     padding-bottom: 2%;
     border-color: #a8cecc;
     color: black;
     font-size: 20px;
     text-align: center;
-    min-width: 20px;
-    max-width: 400px;
-    min-height: 100px;
+    background-color: #f5fafa;
+    min-height: 50px;
     max-height: 400px;
-    background-color:#f5fafa;
+    display: flex;
+    flex-direction: column;
     @media (max-width: 991px) {
-        min-width: 350px;
-        max-width: 400px;
-        min-height: 100px;
-        max-height: 400px;
-    }
-    @media (max-width: 819px) {
-        min-width: 500px;
         max-width: 500px;
-        min-height: 300px;
-        max-height: 300px;
+    }
+    @media (max-width: 768px) {
+        margin-left: 8%;
+        max-width: 600px;
     }
 }
 #line5{
@@ -700,21 +691,12 @@
     font-size: 18px;
 }
 
-#spacemedcenter{
-    height: 300px;
-    @media (max-width: 991px){
-        height: 600px;
-    }
-    @media (max-width: 819px){
-        height: 1350px;
-    }
-}
 .text50{
-    display: grid;
+    margin-top: 7%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    padding-top: 3%;
     padding-bottom: 3%;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: bold;
     color:#a8cecc;
     @media (max-width: 768px){
@@ -724,11 +706,13 @@
     }
 }
 .text51{
+    padding-top: 1%;
+    line-height: 30px;
     color: black;
     margin: auto;
-    font-weight: normal;
+    font-weight: lighter;
     width: 700px;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     @media (max-width: 768px){
         width: 550px;
@@ -867,8 +851,8 @@
     }
 }
 .text70{
-
-    font-size: 36px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     color: white;
@@ -960,7 +944,8 @@
     height: 60px;
 }
 .text80{
-    font-size: 22px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
     text-align: center;
     color: white;
 }
@@ -1032,15 +1017,16 @@
     }
 }
 .phonenumber{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     width: 330px;
     padding-top: 30%;
     overflow-wrap: nowrap;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     text-align: left;
     color: #a8cecc;
     @media(max-width: 1199px) {
-        font-size: 45px;
+        font-size: 30px;
         width: 280px;
     }
     @media(max-width: 768px){
@@ -1114,7 +1100,8 @@
     }
 }
 .text10-1{
-    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
     font-weight: bold;
     text-align: left;
     padding-top: 5%;
